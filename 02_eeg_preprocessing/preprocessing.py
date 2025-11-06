@@ -30,7 +30,7 @@ from preprocessing_utils import save_prepr
 # Input arguments
 # =============================================================================
 parser = argparse.ArgumentParser()
-args = argparse.Namespace(sub=1, n_ses=1, sfreq=100, mvnn_dim='time', project_dir='.')
+args = argparse.Namespace(sub=1, n_ses=1, sfreq=100, mvnn_dim='time', project_dir='../')
 
 print('>>> EEG data preprocessing <<<')
 print('\nInput arguments:')
