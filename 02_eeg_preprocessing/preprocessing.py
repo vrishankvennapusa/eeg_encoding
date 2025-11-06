@@ -30,12 +30,13 @@ from preprocessing_utils import save_prepr
 # Input arguments
 # =============================================================================
 parser = argparse.ArgumentParser()
-args = argparse.Namespace(sub=1, n_ses=1, sfreq=100, mvnn_dim='time', project_dir='../')
+args = argparse.Namespace(sub=1, n_ses=1, sfreq=100,
+                          mvnn_dim='time', project_dir='../')
 
 print('>>> EEG data preprocessing <<<')
 print('\nInput arguments:')
 for key, val in vars(args).items():
-	print('{:16} {}'.format(key, val))
+    print('{:16} {}'.format(key, val))
 
 # Set random seed for reproducible results
 seed = 20200220
@@ -67,4 +68,4 @@ del epoched_test, epoched_train
 # Image conditions × EEG repetitions × EEG channels × EEG time points
 # Then, the preprocessed data of the test and training data partitions is saved.
 save_prepr(args, whitened_test, whitened_train, img_conditions_train, ch_names,
-	times, seed)
+           times, seed)

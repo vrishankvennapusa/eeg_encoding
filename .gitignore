@@ -128,7 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-
-eeg_datset/
-sub-01/
-raw_data/
+# The dataset and other metadata
+eeg_dataset/
+.DS_Store
