@@ -130,3 +130,5 @@ dmypy.json
 
 
 eeg_datset/
+sub-01/
+raw_data/
