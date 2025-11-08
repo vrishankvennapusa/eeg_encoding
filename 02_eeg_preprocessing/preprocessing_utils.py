@@ -249,7 +249,7 @@ def save_prepr(args, whitened_test, whitened_train, img_conditions_train,
     del whitened_train, img_conditions_train
     # Data matrix of shape:
     # Image conditions × EEG repetitions × EEG channels × EEG time points
-    merged_train = np.zeros((len(np.unique(img_cond)), white_data.shape[1]*2,
+    merged_train = np.zeros((len(np.unique(img_cond)), white_data.shape[1]*args.n_ses,
                              white_data.shape[2], white_data.shape[3]))
     for i in range(len(np.unique(img_cond))):
         # Find the indices of the selected category
@@ -269,6 +269,7 @@ def save_prepr(args, whitened_test, whitened_train, img_conditions_train,
         'ch_names': ch_names,
         'times': times
     }
+    print(merged_train.shape)
     del merged_train
     # Create the directory if not existing and save the data
     if os.path.isdir(save_dir) == False:
