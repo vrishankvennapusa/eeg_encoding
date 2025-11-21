@@ -131,3 +131,5 @@ dmypy.json
 # The dataset and other metadata
 eeg_dataset/
 .DS_Store
+
+sub-01/
