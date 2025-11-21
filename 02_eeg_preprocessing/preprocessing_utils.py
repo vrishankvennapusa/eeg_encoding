@@ -97,6 +97,9 @@ def epoching(args, data_part, seed):
         img_conditions.append(img_cond)
         del sorted_data
 
+    print(f'epoched data: {epoched_data.shape}')
+    print(f'image comditions: {img_conditions.shape}')
+
     ### Output ###
     return epoched_data, img_conditions, ch_names, times
 
@@ -175,6 +178,9 @@ def mvnn(args, epoched_test, epoched_train):
         whitened_train.append(np.reshape((np.reshape(session_data[1], (-1,
                                                                        session_data[1].shape[2], session_data[1].shape[3])).swapaxes(1, 2)
                                           @ sigma_inv).swapaxes(1, 2), session_data[1].shape))
+
+    print(f'whitened test: {whitened_test.shape}')
+    print(f'whitened test: {whitened_test.shape}')
 
     ### Output ###
     return whitened_test, whitened_train
@@ -269,7 +275,8 @@ def save_prepr(args, whitened_test, whitened_train, img_conditions_train,
         'ch_names': ch_names,
         'times': times
     }
-    print(merged_train.shape)
+    print(f'merged test: {merged_test.shape}')
+    print(f'merged train: {merged_train.shape}')
     del merged_train
     # Create the directory if not existing and save the data
     if os.path.isdir(save_dir) == False:
