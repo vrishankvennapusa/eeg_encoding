@@ -97,9 +97,6 @@ def epoching(args, data_part, seed):
         img_conditions.append(img_cond)
         del sorted_data
 
-    print(f'epoched data: {epoched_data.shape}')
-    print(f'image comditions: {img_conditions.shape}')
-
     ### Output ###
     return epoched_data, img_conditions, ch_names, times
 
